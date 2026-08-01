@@ -1,4 +1,5 @@
 # Catos Hyprland Noctalia
 
-This is a hyperland dotflie for "CatOS".
+This is a hyprland dotflie for "CatOS".
+
 Nothing...
