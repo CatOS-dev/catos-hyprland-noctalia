@@ -1,0 +1,51 @@
+[backdrop]
+enabled = true
+
+[bar.default]
+background_opacity = 0.59999998658895493
+capsule_opacity = 0.63999998569488525
+capsule_radius = 6
+end = [ "tray", "notifications", "clipboard", "wallpaper", "volume", "control-center" ]
+margin_ends = 0
+radius = 0
+radius_bottom_left = 12
+radius_bottom_right = 12
+start = [ "workspaces" ]
+thickness = 32
+widget_spacing = 12
+
+[shell]
+font_family = "Noto Sans"
+password_style = "random"
+polkit_agent = true
+
+    [shell.panel]
+    transparency_mode = "soft"
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "niri", "qt", "starship" ]
+    community_ids = [ "pywalfox", "vscode", "obs", "papirus-icons" ]
+
+[widget.launcher]
+glyph = "category-2"
+scale = 1.6000000000000001
+
+[widget.taskbar]
+scale = 1.55
+
+[widget.tray]
+drawer = true
+scale = 1.05
+
+[widget.volume]
+show_label = false
+
+[widget.widget]
+type = "oldirtty/color_picker:widget"
