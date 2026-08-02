@@ -22,8 +22,6 @@ packages = [
   "qt6ct",
   "catos-bibata-cursor",
   "dconf",
-  "adw-gtk-theme",
-  "orca",
   "nautilus",
 ]
 
