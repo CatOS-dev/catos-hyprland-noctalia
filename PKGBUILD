@@ -1,4 +1,4 @@
-pkgname=catos-niri-noctaliav5
+pkgname=catos-hyprland-noctaliav5
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="CatOS Hyprland desktop profile powered by Noctalia v5"
