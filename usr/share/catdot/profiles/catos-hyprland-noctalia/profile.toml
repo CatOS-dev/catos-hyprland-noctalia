@@ -27,6 +27,13 @@ packages = [
 
 manage = [
   ".config/dconf/all.ini",
+  ".config/gtk-3.0/gtk.css",
+  ".config/gtk-3.0/noctalia.css",
+  ".config/gtk-3.0/settings.ini",
+  ".config/gtk-4.0/gtk.css",
+  ".config/gtk-4.0/gtk-dark.css",
+  ".config/gtk-4.0/noctalia.css",
+  ".config/gtk-4.0/settings.ini",
   ".config/hypr/hyprland.lua",
   ".config/hypr/noctalia.lua",
   ".config/kitty/kitty.conf",
