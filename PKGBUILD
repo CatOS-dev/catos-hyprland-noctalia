@@ -30,8 +30,8 @@ depends=(
   "nautilus",
 )
 
-source=()
-sha256sums=()
+source=('git+https://github.com/CatOS-dev/catos-hyprland-noctalia.git')
+sha256sums=('SKIP')
 
 package() {
     cp -a "$startdir/usr" "$pkgdir/"
