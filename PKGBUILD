@@ -1,9 +1,9 @@
-pkgname=catos-hyprland-noctalia-v5
+pkgname=catos-hyprland-noctaliav5
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="CatOS Hyprland desktop profile powered by Noctalia v5"
 arch=('any')
-url="https://github.com/CatOS-dev/catos-hyprland-noctalia-v5"
+url="https://github.com/CatOS-dev/catos-hyprland-noctaliav5"
 license=('GPL-3.0-only')
 
 depends=(
@@ -43,7 +43,7 @@ depends=(
 
 makedepends=('git')
 
-source=('git+https://github.com/CatOS-dev/catos-hyprland-noctalia-v5.git')
+source=('git+https://github.com/CatOS-dev/catos-hyprland-noctaliav5.git')
 sha256sums=('SKIP')
 
 package() {
