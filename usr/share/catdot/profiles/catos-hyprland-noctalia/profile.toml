@@ -35,6 +35,14 @@ packages = [
   "noto-fonts",
 ]
 
+# Noctalia's generated outputs are intentionally NOT managed here; they are
+# rewritten at runtime. Bootable seed snapshots are shipped next to them so a
+# clean HOME can start before Noctalia runs for the first time:
+#   .config/hypr/noctalia.lua
+#   .config/gtk-3.0/noctalia.css
+#   .config/gtk-4.0/noctalia.css
+#   .config/kitty/themes/noctalia.conf
+#   .config/qt6ct/colors/noctalia.conf
 manage = [
   ".config/dconf/all.ini",
   ".config/gtk-3.0/gtk.css",
