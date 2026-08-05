@@ -7,6 +7,7 @@ url="https://github.com/CatOS-dev/catos-hyprland-noctalia"
 license=('GPL-3.0-only')
 
 depends=(
+  "catdot",
   "hyprland",
   "xdg-desktop-portal-gtk",
   "xdg-desktop-portal-hyprland",
@@ -34,5 +35,8 @@ source=('git+https://github.com/CatOS-dev/catos-hyprland-noctalia.git')
 sha256sums=('SKIP')
 
 package() {
-    cp -a "$startdir/usr" "$pkgdir/"
+  cd "${srcdir}/${pkgname}"
+
+  install -d "${pkgdir}/usr"
+  cp -a usr/. "${pkgdir}/usr/"
 }
