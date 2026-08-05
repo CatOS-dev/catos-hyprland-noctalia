@@ -37,8 +37,6 @@ depends=(
   "swappy"
   "fish"
   "ttf-jetbrains-mono-nerd"
-  "ttf-jetbrains-maple-mono-nf-xx-xx"
-  "noto-fonts"
 )
 
 makedepends=('git')
