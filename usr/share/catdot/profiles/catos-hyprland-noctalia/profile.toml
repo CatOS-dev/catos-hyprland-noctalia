@@ -1,5 +1,5 @@
 schema = 4
-name = "CatOS Hyprland Noctalia"
+name = "CatOS Hyprland Noctalia v5"
 description = "CatOS Hyprland desktop powered by Noctalia v5"
 
 packages = [
