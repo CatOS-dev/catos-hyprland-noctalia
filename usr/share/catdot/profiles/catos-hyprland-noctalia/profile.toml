@@ -31,8 +31,6 @@ packages = [
   "swappy",
   "fish",
   "ttf-jetbrains-mono-nerd",
-  "ttf-jetbrains-maple-mono-nf-xx-xx",
-  "noto-fonts",
 ]
 
 # Noctalia's generated outputs are intentionally NOT managed here; they are
