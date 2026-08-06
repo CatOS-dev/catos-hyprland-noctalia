@@ -43,10 +43,10 @@ catdot update catos-hyprland-noctaliav5
 ## Seed configuration
 
 All other files under `/usr/share/catos-hyprland-noctaliav5` are initial Profile seeds.
-The managed main Hyprland config includes the profile-scoped
-`~/.config/hypr/custom/catos-hyprland-noctaliav5/` directory. Its `input.lua`,
-`monitors.lua`, and `rules.lua` files are seeded once and are never managed, so
-later selections and updates preserve user changes.
+The managed main Hyprland config loads the modular profile seeds from
+`~/.config/hypr/modules/`. Its `input.lua`, `monitors.lua`, `keybinds.lua`,
+`rules.lua` and the rest are installed once and are never managed, so later
+selections and updates preserve user changes.
 
 Noctalia's generated outputs are seeds as well. Bootable snapshots shipped next
 to them let a clean HOME start before Noctalia runs for the first time:
@@ -59,6 +59,6 @@ to them let a clean HOME start before Noctalia runs for the first time:
 .config/qt6ct/colors/noctalia.conf
 ```
 
-Hyprland starts noctalia, gnome-keyring and dconf import directly from
-`hyprland.lua`. Terminal, file manager and Noctalia bindings invoke kitty,
-nautilus and noctalia directly; no Catdot runtime wrapper is used.
+Hyprland starts noctalia, gnome-keyring, fcitx5 and dconf import directly from
+the `autostart` module. Terminal, file manager and Noctalia bindings invoke
+kitty, nautilus and noctalia directly; no Catdot runtime wrapper is used.

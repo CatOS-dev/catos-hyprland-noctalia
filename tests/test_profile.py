@@ -18,9 +18,9 @@ CONTENT = ROOT / "usr/share" / PROFILE_ID
 
 class CatdotProfileTests(unittest.TestCase):
     def setUp(self) -> None:
-        catdot = os.environ.get("CATDOT_BIN")
+        catdot = os.environ.get("CATDOT_BIN") or shutil.which("catdot")
         if not catdot:
-            self.fail("CATDOT_BIN must point to the real catdot executable")
+            self.fail("CATDOT_BIN not set and catdot not found on PATH")
         self.catdot = Path(catdot)
         self.assertTrue(self.catdot.is_file(), self.catdot)
 
@@ -93,11 +93,11 @@ class CatdotProfileTests(unittest.TestCase):
             )
             self.assertEqual(result.returncode, 0, result.stderr)
 
-    def test_select_and_update_preserve_custom_and_dconf_seeds(self) -> None:
+    def test_select_and_update_preserve_modules_and_dconf_seeds(self) -> None:
         manifest = tomllib.loads(MANIFEST.read_text(encoding="utf-8"))
         packages = manifest["packages"]
         managed = set(manifest["manage"])
-        self.assertNotIn(".config/hypr/custom/catos-hyprland-noctaliav5/input.lua", managed)
+        self.assertNotIn(".config/hypr/modules/keybinds.lua", managed)
         self.assertNotIn(".config/dconf/user", managed)
 
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -120,12 +120,12 @@ class CatdotProfileTests(unittest.TestCase):
 
             managed_hypr = home / ".config/hypr/hyprland.lua"
             managed_noctalia = home / ".config/noctalia/config.toml"
-            custom_seed = home / ".config/hypr/custom/catos-hyprland-noctaliav5/input.lua"
+            module_seed = home / ".config/hypr/modules/keybinds.lua"
             dconf_seed = home / ".config/dconf/user"
-            for path in (managed_hypr, managed_noctalia, custom_seed, dconf_seed):
+            for path in (managed_hypr, managed_noctalia, module_seed, dconf_seed):
                 self.assertTrue(path.is_file(), path)
 
-            custom_seed.write_text("user input settings\n", encoding="utf-8")
+            module_seed.write_text("user keybindings\n", encoding="utf-8")
             dconf_seed.write_bytes(b"user dconf database")
             (staged_content / ".config/hypr/hyprland.lua").write_text(
                 managed_hypr.read_text(encoding="utf-8") + "\n-- managed-update\n",
@@ -135,8 +135,8 @@ class CatdotProfileTests(unittest.TestCase):
                 managed_noctalia.read_text(encoding="utf-8") + "\n# managed-update\n",
                 encoding="utf-8",
             )
-            (staged_content / ".config/hypr/custom/catos-hyprland-noctaliav5/input.lua").write_text(
-                "profile input update\n", encoding="utf-8"
+            (staged_content / ".config/hypr/modules/keybinds.lua").write_text(
+                "profile keybindings update\n", encoding="utf-8"
             )
             (staged_content / ".config/dconf/user").write_bytes(b"profile dconf update")
 
@@ -151,7 +151,7 @@ class CatdotProfileTests(unittest.TestCase):
             self.assertEqual(updated.returncode, 0, updated.stderr)
             self.assertIn("managed-update", managed_hypr.read_text(encoding="utf-8"))
             self.assertIn("managed-update", managed_noctalia.read_text(encoding="utf-8"))
-            self.assertEqual(custom_seed.read_text(encoding="utf-8"), "user input settings\n")
+            self.assertEqual(module_seed.read_text(encoding="utf-8"), "user keybindings\n")
             self.assertEqual(dconf_seed.read_bytes(), b"user dconf database")
 
     def test_profile_has_no_display_manager_payload_or_hard_dependency(self) -> None:

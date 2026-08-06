@@ -1,6 +1,3 @@
--- Profile-scoped user input settings.
--- Catdot seeds this file once and does not manage later edits.
-
 hl.config({
     input = {
         kb_layout  = "us",
