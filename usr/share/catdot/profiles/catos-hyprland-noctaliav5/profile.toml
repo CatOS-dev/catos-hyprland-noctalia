@@ -37,6 +37,10 @@ packages = [
 #   .config/gtk-4.0/noctalia.css
 #   .config/kitty/themes/noctalia.conf
 #   .config/qt6ct/colors/noctalia.conf
+# The managed Hyprland config includes the profile-scoped
+# ~/.config/hypr/custom/catos-hyprland-noctaliav5/ directory. Its input.lua,
+# monitors.lua, and rules.lua files are seeded once and are never managed, so
+# later selections and updates preserve user changes.
 manage = [
   ".config/dconf/all.ini",
   ".config/gtk-3.0/gtk.css",
