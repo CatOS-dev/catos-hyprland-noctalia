@@ -24,19 +24,14 @@ depends=(
   "brightnessctl"
   "playerctl"
   "wireplumber"
-  "qt5ct"
-  "qt6ct"
+  "qt6ct-kde"
   "catos-bibata-cursor"
   "dconf"
   "nautilus"
   "gnome-keyring"
-  "fcitx5"
-  "firefox"
   "grim"
   "slurp"
   "swappy"
-  "fish"
-  "ttf-jetbrains-mono-nerd"
 )
 
 makedepends=('git')

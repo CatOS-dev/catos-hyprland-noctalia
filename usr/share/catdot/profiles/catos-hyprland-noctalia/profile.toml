@@ -19,18 +19,14 @@ packages = [
   "brightnessctl",
   "playerctl",
   "wireplumber",
-  "qt6ct",
+  "qt6ct-kde",
   "catos-bibata-cursor",
   "dconf",
   "nautilus",
   "gnome-keyring",
-  "fcitx5",
-  "firefox",
   "grim",
   "slurp",
   "swappy",
-  "fish",
-  "ttf-jetbrains-mono-nerd",
 ]
 
 # Noctalia's generated outputs are intentionally NOT managed here; they are
