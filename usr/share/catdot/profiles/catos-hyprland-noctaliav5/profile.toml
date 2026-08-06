@@ -37,6 +37,9 @@ packages = [
 #   .config/gtk-4.0/noctalia.css
 #   .config/kitty/themes/noctalia.conf
 #   .config/qt6ct/colors/noctalia.conf
+# The managed main Hyprland config loads the modular profile seeds from
+# ~/.config/hypr/modules/. Those modules are installed once and are never
+# managed, so later selections and updates preserve user edits.
 manage = [
   ".config/dconf/all.ini",
   ".config/gtk-3.0/gtk.css",
