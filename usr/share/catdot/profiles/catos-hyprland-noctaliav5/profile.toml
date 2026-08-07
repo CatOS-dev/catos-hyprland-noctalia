@@ -49,4 +49,5 @@ manage = [
   ".config/kitty/kitty.conf",
   ".config/noctalia/config.toml",
   ".config/qt6ct/qt6ct.conf",
+  ".config/starship.toml",
 ]
